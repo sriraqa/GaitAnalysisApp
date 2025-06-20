@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var bluetoothManager = BluetoothManager()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        VStack(spacing: 8) {
+            Text("Force Sensor Value:")
+            Text("\(bluetoothManager.forceLevel)")
+                .foregroundColor(bluetoothManager.forceLevel < 10 ? .green : .red)
         }
         .padding()
     }
