@@ -14,7 +14,6 @@
 		37C406252E049310006C7AAC /* GaitAnalysisAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C406242E049310006C7AAC /* GaitAnalysisAppTests.swift */; };
 		37C4062F2E049310006C7AAC /* GaitAnalysisAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C4062E2E049310006C7AAC /* GaitAnalysisAppUITests.swift */; };
 		37C406312E049310006C7AAC /* GaitAnalysisAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C406302E049310006C7AAC /* GaitAnalysisAppUITestsLaunchTests.swift */; };
-		37C4063E2E04ECA8006C7AAC /* BluetoothIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C4063D2E04ECA8006C7AAC /* BluetoothIO.swift */; };
 		37C406412E04F883006C7AAC /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C406402E04F883006C7AAC /* BluetoothManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +45,6 @@
 		37C4062A2E049310006C7AAC /* GaitAnalysisAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GaitAnalysisAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C4062E2E049310006C7AAC /* GaitAnalysisAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitAnalysisAppUITests.swift; sourceTree = "<group>"; };
 		37C406302E049310006C7AAC /* GaitAnalysisAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitAnalysisAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		37C4063D2E04ECA8006C7AAC /* BluetoothIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothIO.swift; sourceTree = "<group>"; };
 		37C4063F2E04ED65006C7AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		37C406402E04F883006C7AAC /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +102,6 @@
 				37C406152E04930E006C7AAC /* ContentView.swift */,
 				37C406172E049310006C7AAC /* Assets.xcassets */,
 				37C406192E049310006C7AAC /* Preview Content */,
-				37C4063D2E04ECA8006C7AAC /* BluetoothIO.swift */,
 				37C406402E04F883006C7AAC /* BluetoothManager.swift */,
 			);
 			path = GaitAnalysisApp;
@@ -268,7 +265,6 @@
 				37C406162E04930E006C7AAC /* ContentView.swift in Sources */,
 				37C406142E04930E006C7AAC /* GaitAnalysisAppApp.swift in Sources */,
 				37C406412E04F883006C7AAC /* BluetoothManager.swift in Sources */,
-				37C4063E2E04ECA8006C7AAC /* BluetoothIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GaitAnalysisApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 9NTHSQB7ND;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GaitAnalysisApp/Info.plist;
@@ -435,6 +432,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,6 +454,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GaitAnalysisApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 9NTHSQB7ND;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GaitAnalysisApp/Info.plist;
@@ -464,6 +463,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
