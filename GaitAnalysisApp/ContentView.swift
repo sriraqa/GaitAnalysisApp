@@ -18,6 +18,7 @@ struct ContentView: View {
                 ProgressView("Searching for ESP32 Module")
                     .progressViewStyle(.circular)
             } else if bluetoothManager.isConnected {
+                Image("foot_outline")
                 Text("Force Sensor Values:")
                     .font(.system(size: 24))
                     .bold()
@@ -47,6 +48,70 @@ struct ContentView: View {
                     ]
                 }
             } else {
+                VStack {
+                    HStack {
+                        Circle()
+                            .fill(
+                                RadialGradient(
+                                    gradient: Gradient(colors: [.red, .orange, .yellow]),
+                                    center: .center,
+                                    startRadius: 0,
+                                    endRadius: 50
+                                )
+                            )
+                            .frame(width: 100, height: 100)
+                        Spacer()
+                    }
+                    .padding([.horizontal], 16)
+                    HStack {
+                        Circle()
+                            .fill(
+                                RadialGradient(
+                                    gradient: Gradient(colors: [.red, .orange, .yellow]),
+                                    center: .center,
+                                    startRadius: 0,
+                                    endRadius: 50
+                                )
+                            )
+                            .frame(width: 100, height: 100)
+                        Circle()
+                            .fill(
+                                RadialGradient(
+                                    gradient: Gradient(colors: [.red, .orange, .yellow]),
+                                    center: .center,
+                                    startRadius: 0,
+                                    endRadius: 50
+                                )
+                            )
+                            .frame(width: 100, height: 100)
+                    }
+                    Circle()
+                        .fill(
+                            RadialGradient(
+                                gradient: Gradient(colors: [.red, .orange, .yellow]),
+                                center: .center,
+                                startRadius: 0,
+                                endRadius: 50
+                            )
+                        )
+                        .frame(width: 100, height: 100)
+                    Circle()
+                        .fill(
+                            RadialGradient(
+                                gradient: Gradient(colors: [.red, .orange, .yellow]),
+                                center: .center,
+                                startRadius: 0,
+                                endRadius: 50
+                            )
+                        )
+                        .frame(width: 100, height: 100)
+                }
+                    .mask(
+                        Image("foot_outline")
+                            .resizable()
+                            .frame(width: 190, height: 500)
+                    )
+
                 List(bluetoothManager.peripherals) { peripheral in
                     device(peripheral)
                 }
