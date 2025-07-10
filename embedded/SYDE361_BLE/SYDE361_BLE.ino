@@ -29,7 +29,8 @@ int16_t gyro_x, gyro_y, gyro_z;
 char temp_str[7];
 char *convert_int16_to_str(int16_t i)
 {
-  sprintf(tmp_str, "%6d", i) return temp_str;
+  sprintf(temp_str, "%6d", i); 
+  return temp_str;
 }
 
 BLECharacteristic *pCharacteristic;
@@ -77,7 +78,7 @@ void setup()
 
   // Set up gyroscope using Wire library
   Wire.begin();
-  Wire.beginTransmission(MPU_ADDR);
+  Wire.beginTransmission(gyro_address);
   Wire.write(0x68);
   Wire.write(0);
   Wire.endTransmission(true);
@@ -105,10 +106,10 @@ void loop()
     pCharacteristic->setValue(json.c_str());
     pCharacteristic->notify();
 
-    Wire.beginTransmission(MPU_ADDR);
+    Wire.beginTransmission(gyro_address);
     Wire.write(0x3B); 
     Wire.endTransmission(false); 
-    Wire.requestFrom(MPU_ADDR, 7 * 2, true); 
+    Wire.requestFrom(gyro_address, 7 * 2, true); 
 
     gyro_x = Wire.read() << 8 | Wire.read(); 
     gyro_y = Wire.read() << 8 | Wire.read(); 
