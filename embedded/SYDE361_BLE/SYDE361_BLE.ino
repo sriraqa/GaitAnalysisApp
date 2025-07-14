@@ -121,7 +121,6 @@ void loop() {
 
     pCharacteristic->setValue(json.c_str());
     pCharacteristic->notify();
-
   }
 
   delay(100);  // 10 updates per second
