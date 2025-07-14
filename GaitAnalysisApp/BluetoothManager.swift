@@ -22,6 +22,8 @@ struct ForceData: Decodable, Equatable {
     let arch: Int
     let ball: Int
     let sole: Int
+    let pitch: Int
+    let roll: Int
 }
 
 // BLEManager class conforms to observable object for SwiftUI, CBCentralManagerDelegate and CBPeripheralDelegate for managing BLE connections.
@@ -42,7 +44,7 @@ class BLEManager: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriph
 
     @Published var peripherals: [Peripheral] = []
     @Published var isConnected = false // Indicates if the app is connected to a peripheral.
-    @Published var forceLevel: ForceData = ForceData(heel: 0, big_toe: 0, arch: 0, ball: 0, sole: 0) // numbers that indicates the read values
+    @Published var forceLevel: ForceData = ForceData(heel: 0, big_toe: 0, arch: 0, ball: 0, sole: 0, pitch: 0, roll: 0) // numbers that indicates the read values
 
     override init() {
         super.init()

@@ -97,6 +97,23 @@ struct ContentView: View {
                             .frame(width: 190, height: 500)
                     )
                 Spacer()
+                Button(action: {
+                    let numberString = "226-899-3825"
+                    let telephone = "tel://"
+                    let formattedString = telephone + numberString
+                    guard let url = URL(string: formattedString) else { return }
+                    UIApplication.shared.open(url)
+                   }) {
+                    Image(systemName: "exclamationmark.triangle.fill").foregroundStyle(Color.white)
+                    Text("You have fallen! Press to call 911")
+                        .bold()
+                        .foregroundStyle(Color.white)
+                }
+                    .fixedSize(horizontal: false, vertical: true)
+                    .multilineTextAlignment(.center)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 20).fill(Color(red: 0.690, green: 0.149, blue: 0.082)))
+                    .frame(width: 400, height: 80)
                 List {
                     Button("Disconnect") {
                         bluetoothManager.disconnectFromPeripheral()
