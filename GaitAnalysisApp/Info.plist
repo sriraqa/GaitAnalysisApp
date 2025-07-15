@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string></string>
+	<string>This app uses Bluetooth to connect to receive and monitor real-time data</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string></string>
+	<string>This app uses Bluetooth to connect to receive and monitor real-time data</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>App communicates using Core Bluetooth</string>
