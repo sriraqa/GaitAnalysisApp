@@ -423,7 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GaitAnalysisApp/Preview Content\"";
-				DEVELOPMENT_TEAM = CL32T4FD38;
+				DEVELOPMENT_TEAM = 4RX44B2XGP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GaitAnalysisApp/Info.plist;
@@ -440,7 +440,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Jane.GaitAnalysisApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "Sarah-Qiao.GaitAnalysisApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -456,7 +456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GaitAnalysisApp/Preview Content\"";
-				DEVELOPMENT_TEAM = CL32T4FD38;
+				DEVELOPMENT_TEAM = 4RX44B2XGP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GaitAnalysisApp/Info.plist;
@@ -473,7 +473,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Jane.GaitAnalysisApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "Sarah-Qiao.GaitAnalysisApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
