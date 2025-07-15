@@ -21,7 +21,7 @@ Output data will look like this:
 */
 
 // Define sensor pins
-const int sensorPins[] = { A1, A2, A3, A6, A7 };
+const int sensorPins[] = { A1, A7, A2, A3, A6 };
 const char *sensorNames[] = { "heel", "big_toe", "arch", "ball", "sole" };
 const int numSensors = 5;
 const int MPU_address = 0x68;
