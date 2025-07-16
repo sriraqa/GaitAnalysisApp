@@ -10,7 +10,7 @@ import Combine
 
 struct ContentView: View {
     @ObservedObject var bluetoothManager = BLEManager()
-    @State var mirror: [Int] = []
+    @State var mirror: [String] = []
     
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
@@ -29,7 +29,7 @@ struct ContentView: View {
                             Circle()
                                 .fill(
                                     RadialGradient(
-                                        gradient: Gradient(colors: [getColor(for: (!mirror.isEmpty ? mirror[0] : 0)), .gray]),
+                                        gradient: Gradient(colors: [getColor(for: (!mirror.isEmpty ? Int(mirror[0])! : 0)), .gray]),
                                         center: .center,
                                         startRadius: 0,
                                         endRadius: 50
@@ -45,7 +45,7 @@ struct ContentView: View {
                             Circle()
                                 .fill(
                                     RadialGradient(
-                                        gradient: Gradient(colors: [getColor(for: (!mirror.isEmpty ? mirror[1] : 0)), .gray]),
+                                        gradient: Gradient(colors: [getColor(for: (!mirror.isEmpty ? Int(mirror[1])! : 0)), .gray]),
                                         center: .center,
                                         startRadius: 0,
                                         endRadius: 50
@@ -56,7 +56,7 @@ struct ContentView: View {
                             Circle()
                                 .fill(
                                     RadialGradient(
-                                        gradient: Gradient(colors: [getColor(for: (!mirror.isEmpty ? mirror[2] : 0)), .gray]),
+                                        gradient: Gradient(colors: [getColor(for: (!mirror.isEmpty ? Int(mirror[2])! : 0)), .gray]),
                                         center: .center,
                                         startRadius: 0,
                                         endRadius: 50
@@ -68,7 +68,7 @@ struct ContentView: View {
                         Circle()
                             .fill(
                                 RadialGradient(
-                                    gradient: Gradient(colors: [getColor(for: (!mirror.isEmpty ? mirror[3] : 0)), .gray]),
+                                    gradient: Gradient(colors: [getColor(for: (!mirror.isEmpty ? Int(mirror[3])! : 0)), .gray]),
                                     center: .center,
                                     startRadius: 0,
                                     endRadius: 50
@@ -81,7 +81,7 @@ struct ContentView: View {
                         Circle()
                             .fill(
                                 RadialGradient(
-                                    gradient: Gradient(colors: [getColor(for: (!mirror.isEmpty ? mirror[4] : 0)), .gray]),
+                                    gradient: Gradient(colors: [getColor(for: (!mirror.isEmpty ? Int(mirror[4])! : 0)), .gray]),
                                     center: .center,
                                     startRadius: 0,
                                     endRadius: 50
@@ -98,7 +98,7 @@ struct ContentView: View {
                     )
                 Spacer()
                 Button(action: {
-                    let numberString = "226-899-3825"
+                    let numberString = "911"
                     let telephone = "tel://"
                     let formattedString = telephone + numberString
                     guard let url = URL(string: formattedString) else { return }
@@ -192,27 +192,31 @@ struct ContentView: View {
         let clamped = min(max(value, 0), 300)
 
         // Define the color stops: Green (0), Yellow (150), Red (300)
-        let green = SIMD3<Double>(0.0, 1.0, 0.0)
-        let yellow = SIMD3<Double>(1.0, 1.0, 0.0)
-        let red = SIMD3<Double>(1.0, 0.0, 0.0)
+        let stops: [(threshold: Int, color: SIMD3<Double>)] = [
+            (0, SIMD3(0.0, 0.0, 1.0)), // Blue
+            (37, SIMD3(0.0, 1.0, 1.0)), // Cyan
+            (75, SIMD3(0.0, 1.0, 0.0)), // Green
+            (112, SIMD3(0.5, 1.0, 0.0)), // Lime
+            (150, SIMD3(1.0, 1.0, 0.0)), // Yellow
+            (187, SIMD3(1.0, 0.75, 0.0)), // Yellow-Orange
+            (225, SIMD3(1.0, 0.5, 0.0)), // Orange
+            (262, SIMD3(1.0, 0.25, 0.0)), // Reddish
+            (300, SIMD3(1.0, 0.0, 0.0)) // Red
+        ]
 
-        let resultRGB: SIMD3<Double>
+        // Find the two bounding stops and interpolate
+        for i in 0..<stops.count - 1 {
+            let (lowVal, lowColor) = stops[i]
+            let (highVal, highColor) = stops[i + 1]
 
-        if clamped <= 150 {
-            // Interpolate between green and yellow
-            let t = clamped / 150
-            resultRGB = linearInterpolate(a: green, b: yellow, t: Double(t))
-        } else {
-            // Interpolate between yellow and red
-            let t = (clamped - 150) / 150
-            resultRGB = linearInterpolate(a: yellow, b: red, t: Double(t))
+            if clamped <= highVal {
+                let t = Double(clamped - lowVal) / Double(highVal - lowVal)
+                let resultRGB = linearInterpolate(a: lowColor, b: highColor, t: t)
+                return Color(red: resultRGB.x, green: resultRGB.y, blue: resultRGB.z)
+            }
         }
 
-        return Color(
-            red: resultRGB.x,
-            green: resultRGB.y,
-            blue: resultRGB.z
-        )
+        return Color.red // fallback
     }
     
     func linearInterpolate(a: SIMD3<Double>, b: SIMD3<Double>, t: Double) -> SIMD3<Double> {
