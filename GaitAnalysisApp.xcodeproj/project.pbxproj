@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		37C406102E04930E006C7AAC /* GaitAnalysisApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaitAnalysisApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37C406102E04930E006C7AAC /* Gait Better.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gait Better.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C406132E04930E006C7AAC /* GaitAnalysisAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaitAnalysisAppApp.swift; sourceTree = "<group>"; };
 		37C406152E04930E006C7AAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		37C406172E049310006C7AAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		37C406112E04930E006C7AAC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37C406102E04930E006C7AAC /* GaitAnalysisApp.app */,
+				37C406102E04930E006C7AAC /* Gait Better.app */,
 				37C406202E049310006C7AAC /* GaitAnalysisAppTests.xctest */,
 				37C4062A2E049310006C7AAC /* GaitAnalysisAppUITests.xctest */,
 			);
@@ -149,7 +149,7 @@
 			);
 			name = GaitAnalysisApp;
 			productName = GaitAnalysisApp;
-			productReference = 37C406102E04930E006C7AAC /* GaitAnalysisApp.app */;
+			productReference = 37C406102E04930E006C7AAC /* Gait Better.app */;
 			productType = "com.apple.product-type.application";
 		};
 		37C4061F2E049310006C7AAC /* GaitAnalysisAppTests */ = {
@@ -441,7 +441,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Sarah-Qiao.GaitAnalysisApp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Gait Better";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -474,7 +474,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Sarah-Qiao.GaitAnalysisApp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Gait Better";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
