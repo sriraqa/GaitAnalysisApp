@@ -81,7 +81,6 @@ void setup() {
 
 void loop() {
 
-  if (deviceConnected) {
 
     Wire.beginTransmission(MPU_address);
     Wire.write(0x3B);
@@ -107,13 +106,13 @@ void loop() {
 
     for (int i = 0; i < numSensors; i++) {
       int value = analogRead(sensorPins[i]);
-      json += "\"" + String(sensorNames[i]) + "\":" + String(value);
+      json += "\"" + String(sensorNames[i]) + "\":\"" + String(value);
       if (i < numSensors )
-        json += ",";
+        json += "\",";
     }
     // add pitch and roll values to json
-    json += "\"" + String("pitch") + "\":" + pitch + ",";
-    json += "\"" + String("roll") + "\":" + roll;
+    json += "\"" + String("pitch") + "\":\"" + pitch + "\",";
+    json += "\"" + String("roll") + "\":\"" + roll + "\"";
 
     json += "}";
 
@@ -121,7 +120,6 @@ void loop() {
 
     pCharacteristic->setValue(json.c_str());
     pCharacteristic->notify();
-  }
 
   delay(100);  // 10 updates per second
 }
