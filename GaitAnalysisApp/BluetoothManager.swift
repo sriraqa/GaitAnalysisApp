@@ -41,12 +41,26 @@ class BLEManager: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriph
     var esp32Peripheral: CBPeripheral?
     // Reference to the characteristic through which communication happens.
     var esp32Characteristic: CBCharacteristic?
-
+    
+    var isFall: Bool
+    
     @Published var peripherals: [Peripheral] = []
     @Published var isConnected = false // Indicates if the app is connected to a peripheral.
-    @Published var forceLevel: ForceData = ForceData(heel: "0", big_toe: "0", arch: "0", ball: "0", sole: "0", pitch: "0", roll: "0") // numbers that indicates the read values
+    @Published var forceLevel: ForceData = ForceData(heel: "0", big_toe: "0", arch: "0", ball: "0", sole: "0", pitch: "0", roll: "0") {
+        didSet{
+            if (forceLevel.roll != oldValue.roll) {
+                print("forceLevel ROLL changed to \(forceLevel.roll)")
+                if let roll_value = Double(forceLevel.roll) {
+                    isFall = roll_value > -10
+                    print(isFall ? "Fall detected" : "Fall not detected")
+                }
+            }
+        }
+    }
+    // numbers that indicates the read values
 
     override init() {
+        isFall = false
         super.init()
         centralManager = CBCentralManager(delegate: self, queue: nil)
     }
