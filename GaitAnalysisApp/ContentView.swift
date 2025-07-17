@@ -97,23 +97,27 @@ struct ContentView: View {
                             .frame(width: 190, height: 500)
                     )
                 Spacer()
-                Button(action: {
-                    let numberString = "911"
-                    let telephone = "tel://"
-                    let formattedString = telephone + numberString
-                    guard let url = URL(string: formattedString) else { return }
-                    UIApplication.shared.open(url)
-                   }) {
-                    Image(systemName: "exclamationmark.triangle.fill").foregroundStyle(Color.white)
-                    Text("You have fallen! Press to call 911")
-                        .bold()
-                        .foregroundStyle(Color.white)
+                // Fall detection notification conditionally appears
+                if (bluetoothManager.isFall == true) {
+                    Button(action: {
+                        let numberString = "911"
+                        let telephone = "tel://"
+                        let formattedString = telephone + numberString
+                        guard let url = URL(string: formattedString) else { return }
+                        UIApplication.shared.open(url)
+                       }) {
+                        Image(systemName: "exclamationmark.triangle.fill").foregroundStyle(Color.white)
+                        Text("You have fallen! Press to call 911")
+                            .bold()
+                            .foregroundStyle(Color.white)
+                    }
+                        .fixedSize(horizontal: false, vertical: true)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 20).fill(Color(red: 0.690, green: 0.149, blue: 0.082)))
+                        .frame(width: 400, height: 80)
+
                 }
-                    .fixedSize(horizontal: false, vertical: true)
-                    .multilineTextAlignment(.center)
-                    .padding()
-                    .background(RoundedRectangle(cornerRadius: 20).fill(Color(red: 0.690, green: 0.149, blue: 0.082)))
-                    .frame(width: 400, height: 80)
                 List {
                     Button("Disconnect") {
                         bluetoothManager.disconnectFromPeripheral()
@@ -141,7 +145,9 @@ struct ContentView: View {
                 forceData.ball,
                 forceData.sole,
                 forceData.arch,
-                forceData.heel
+                forceData.heel,
+                forceData.pitch, // may not be necessary, can remove if causing errors
+                forceData.roll
             ]
         }
     }
@@ -222,4 +228,5 @@ struct ContentView: View {
     func linearInterpolate(a: SIMD3<Double>, b: SIMD3<Double>, t: Double) -> SIMD3<Double> {
         return a + (b - a) * t
     }
+    
 }
