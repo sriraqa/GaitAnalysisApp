@@ -41,7 +41,7 @@ struct ContentView: View {
                         }
                         .padding([.horizontal], 16)
                         HStack(spacing: 2) {
-    //                        Right Ball
+    //                        Ball
                             Circle()
                                 .fill(
                                     RadialGradient(
@@ -52,7 +52,7 @@ struct ContentView: View {
                                     )
                                 )
                                 .frame(width: 100, height: 100)
-    //                        Left Ball
+    //                        Sole
                             Circle()
                                 .fill(
                                     RadialGradient(
