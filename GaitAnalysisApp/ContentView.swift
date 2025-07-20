@@ -200,14 +200,14 @@ struct ContentView: View {
         // Define the color stops: Green (0), Yellow (150), Red (300)
         let stops: [(threshold: Int, color: SIMD3<Double>)] = [
             (0, SIMD3(0.0, 0.0, 1.0)), // Blue
-            (37, SIMD3(0.0, 1.0, 1.0)), // Cyan
-            (75, SIMD3(0.0, 1.0, 0.0)), // Green
-            (112, SIMD3(0.5, 1.0, 0.0)), // Lime
-            (150, SIMD3(1.0, 1.0, 0.0)), // Yellow
-            (187, SIMD3(1.0, 0.75, 0.0)), // Yellow-Orange
-            (225, SIMD3(1.0, 0.5, 0.0)), // Orange
-            (262, SIMD3(1.0, 0.25, 0.0)), // Reddish
-            (300, SIMD3(1.0, 0.0, 0.0)) // Red
+            (27, SIMD3(0.0, 1.0, 1.0)), // Cyan
+            (65, SIMD3(0.0, 1.0, 0.0)), // Green
+            (102, SIMD3(0.5, 1.0, 0.0)), // Lime
+            (130, SIMD3(1.0, 1.0, 0.0)), // Yellow
+            (167, SIMD3(1.0, 0.75, 0.0)), // Yellow-Orange
+            (190, SIMD3(1.0, 0.5, 0.0)), // Orange
+            (222, SIMD3(1.0, 0.25, 0.0)), // Reddish
+            (250, SIMD3(1.0, 0.0, 0.0)) // Red
         ]
 
         // Find the two bounding stops and interpolate
